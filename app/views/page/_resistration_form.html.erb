@@ -1,0 +1,36 @@
+<center id="myModal" class="modal fade">
+  <div class="modal-dialog modal-login">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">ログイン</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center social-btn pb-5">
+          <a href="#" class="btn btn-primary btn-lg btn-block"><i class="fab fa-facebook-square 2x"></i><b class="pl-2">Facebook</b>でログイン</a>
+          <a href="#" class="btn btn-info btn-lg btn-block"><i class="fab fa-twitter-square 2x"></i><b class="pl-2">Twitter</b>でログイン</a>
+          <a href="#" class="btn btn-danger btn-lg btn-block"><%= image_tag '/google.svg.webp', class: "google-font pb-1" %><b class="pl-2">Google</b>でログイン</a>
+        </div>
+        <%= form_tag :session do %>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon pt-2"><i class="fa fa-envelope"></i></span>
+              <input type="text" class="form-control" name="email" placeholder="メールアドレス" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon pt-2"><i class="fa fa-lock"></i></span>
+              <input type="password" class="form-control" name="password" placeholder="パスワード" required="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block btn-lg">ログイン</button>
+          </div>
+          <p class="hint-text"><%= link_to "パスワードを忘れた方へ", "#" %></p>
+        <% end %>
+      </div>
+      <div class="modal-footer">アカウントをお持ちでない方へ <%= link_to '新規会員登録', "#newModal", class: "resistration-btn", 'data-toggle': "modal" %></div>
+    </div>
+  </div>
+</center>
