@@ -31,5 +31,7 @@ module JobEc
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    #config.action_controller.include_all_helpers = false 
   end
 end

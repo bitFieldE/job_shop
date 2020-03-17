@@ -1,6 +1,10 @@
 <div class="float-right py-1">
-  <%= link_to '新規会員登録', "#newModal", class: "resistration-btn p-3", 'data-toggle': "modal" %>
-  <%= link_to 'ログイン', "#myModal", class: "p-3", 'data-toggle': "modal" %>
+  <% unless user_log_in? %>
+    <%= link_to '新規会員登録', "#newModal", class: "resistration-btn p-3", 'data-toggle': "modal" %>
+    <%= link_to 'ログイン', "#myModal", class: "p-3", 'data-toggle': "modal" %>
+  <% else %>
+    <%= link_to 'ログアウト', :session, method: :delete %>
+  <% end %>
 </div>
 
 <!-- Modal HTML -->

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JobEc</title>
+    <title>仕事アプリ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
+    <script src="https://js.pay.jp/" type="text/javascript"></script>
   </head>
 
   <body>
+    <p><%= flash.alert %></p>
     <%= yield %>
   </body>
 </html>
