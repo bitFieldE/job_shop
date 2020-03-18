@@ -3,7 +3,7 @@
     <%= link_to '新規会員登録', "#newModal", class: "resistration-btn p-3", 'data-toggle': "modal" %>
     <%= link_to 'ログイン', "#myModal", class: "p-3", 'data-toggle': "modal" %>
   <% else %>
-    <%= link_to 'ログアウト', :session, method: :delete %>
+    <%= link_to 'ログアウト', :session, method: :delete, class: "p-3" %>
   <% end %>
 </div>
 

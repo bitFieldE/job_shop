@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_16_113745) do
     t.boolean "activated"
     t.datetime "activated_at"
     t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
   add_foreign_key "cards", "users"

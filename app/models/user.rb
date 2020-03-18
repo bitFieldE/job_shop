@@ -38,7 +38,7 @@ class User < ApplicationRecord
  def authenticated?(attribute, token)
    digest = send("#{attribute}_digest")
    return false if digest.nil?
-   BCrypt::Password.new(digest).is_password?(remember_token)
+   BCrypt::Password.new(digest).is_password?(token)
  end
 
  # ユーザーログインを破棄する
@@ -48,7 +48,8 @@ class User < ApplicationRecord
 
  # アカウントを有効にする
   def activate
-    update_columns(activated: FILL_IN, activated_at: FILL_IN)
+    update_attribute(:activated, true)
+    update_attribute(:activated_at, Time.zone.now)
   end
 
   # 有効化用のメールを送信する
@@ -66,6 +67,10 @@ class User < ApplicationRecord
   # パスワード再設定のメールを送信する
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
+  end
+
+  def password_reset_expired?
+    reset_sent_at < 24.hours.ago
   end
 
 private

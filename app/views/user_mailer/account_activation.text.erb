@@ -1,4 +1,5 @@
-<%= @user.family_name + ' ' + @user.first_name + 'さん' %>,
+Hi <%= @user.user_name %>,
 
-ご登録いただきありがとうございます。アカウントを有効化するために下記のURLからログインを行ってください。
-本登録： <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+Welcome to the Sample App! Click on the link below to activate your account:
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

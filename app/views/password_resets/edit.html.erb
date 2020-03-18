@@ -1,19 +1,31 @@
-<h1>Reset password</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= hidden_field_tag :email, @user.email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Update password", class: "btn btn-primary" %>
-    <% end %>
+<center id="myModal">
+  <div class="modal-dialog modal-login">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">パスワードの再設定</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for(@user, url: password_reset_path(params[:id])) do |form| %>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon p-2"><i class="fa fa-lock"></i></span>
+              <%= hidden_field_tag :email, @user.email %>
+              <%= form.password_field :password, class: "form-control", placeholder: "パスワード", required: "required" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon p-2">
+                <i class="fas fa-check"></i>
+              </span>
+              <%= form.password_field :password_confirmation, class: "form-control", placeholder: "パスワードの確認", required: "required" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= form.submit "変更する", class: "btn btn-primary btn-block btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>
+</center>

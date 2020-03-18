@@ -38,11 +38,11 @@ body {
             font-size: 17px;
           }
           .fa-check {
-            color: #fff;
-            left: 9px;
-            top: 18px;
-            font-size: 7px;
-            position: absolute;
+          //  color: #fff;
+            //left: 9px;
+          //  top: 18px;
+          //  font-size: 10px;
+          //  position: absolute;
           }
         }
         .form-control, .form-control:focus, .input-group-addon {
@@ -85,6 +85,6 @@ body {
     }
   }
   div.form-group div.continue{
-  float: left;
-}
+    float: left;
+  }
 }
